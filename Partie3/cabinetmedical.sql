@@ -107,3 +107,11 @@ SELECT `medecins`.`nom` as `nomMedecin`, `date`, `creneauHoraire`, `patients`.`n
 FROM `rdv`
 INNER JOIN `medecins` ON `rdv`.id_medecins = (`medecins`.id = '1')
 INNER JOIN `patients` ON `rdv`.id_patients = `patients`.id;
+
+fonctionnalité 3:
+SELECT `patients`.`nom` as `nomPatient`, `patients`.`prenom` as `prenomPatient`, `nomSpecialite`, `medecins`.`nom` as `nomMedecin`, `medecins`.`prenom` as `prenomMedecin`, `date`, `creneauHoraire` 
+FROM `rdv`
+INNER JOIN `patients` ON `rdv`.id_patients = (`patients`.id = '15')
+INNER JOIN `medecins` ON `rdv`.id_medecins = `medecins`.id
+INNER JOIN `specialites` ON `medecins`.id_specialites = `specialites`.id;
+
