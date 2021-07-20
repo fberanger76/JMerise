@@ -85,3 +85,25 @@ FROM `rdv`
 INNER JOIN `patients` ON `rdv`.id_patients = `patients`.id
 LEFT JOIN `medecins` ON `rdv`.id_medecins = `medecins`.id
 LEFT JOIN `specialites` ON `medecins`.id_specialites = `specialites`.id;
+
+fonctionnalité 2:
+UPDATE `rdv`
+SET `id_medecins` = '4'
+WHERE `id_medecins` = '1' && `id_patients` = '1';
+UPDATE `rdv`
+SET `id_medecins` = '5'
+WHERE `id_medecins` = '1' && `id_patients` = '7';
+UPDATE `rdv`
+SET `id_medecins` = '4'
+WHERE `id_medecins` = '1' && `id_patients` = '10';
+UPDATE `rdv`
+SET `id_medecins` = '5'
+WHERE `id_medecins` = '1' && `id_patients` = '12';
+UPDATE `rdv`
+SET `id_medecins` = '4'
+WHERE `id_medecins` = '1' && `id_patients` = '13';
+
+SELECT `medecins`.`nom` as `nomMedecin`, `date`, `creneauHoraire`, `patients`.`nom` as `nomPatient`, `patients`.`prenom` as `prenomPatient`
+FROM `rdv`
+INNER JOIN `medecins` ON `rdv`.id_medecins = (`medecins`.id = '1')
+INNER JOIN `patients` ON `rdv`.id_patients = `patients`.id;
