@@ -114,3 +114,10 @@ FROM `notes`
 LEFT JOIN `eleves` ON `notes`.id_eleves = `eleves`.id
 LEFT JOIN `classes` ON `eleves`.id = `classes`.id_eleves
 GROUP BY `eleves`.id, `classes`.classe;
+
+Fonctionnalité 3:
+SELECT `prof`.`nom` as `nomProf`, `prof`.`prenom` as `prenomProf`, `classe`, `eleves`.`nom` as `nomEleve`, `eleves`.`prenom` as `prenomEleve`
+FROM `classes`
+LEFT JOIN `eleves` ON `classes`.id_eleves = `eleves`.id
+LEFT JOIN `prof` ON `classes`.id_prof = `prof`.id
+WHERE `prof`.id = '4';
