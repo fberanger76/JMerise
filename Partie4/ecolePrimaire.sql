@@ -101,3 +101,9 @@ VALUES ('CP','5','16'),('CP','2','25'),('CP','2','20'),('CP','5','21'),('CP','6'
 UPDATE `prof`
 SET `id_matieres` = '5'
 WHERE `id_matieres` = '6' && `nom` = 'Parks';
+
+Fonctionnalité 1:
+SELECT `nom`, `prenom`, `notes`, `matiere`
+FROM `notes`
+LEFT JOIN `eleves` ON `notes`.id_eleves = `eleves`.id
+LEFT JOIN `matieres` ON `notes`.id_matieres = `matieres`.id;
