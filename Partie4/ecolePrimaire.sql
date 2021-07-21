@@ -107,3 +107,10 @@ SELECT `nom`, `prenom`, `notes`, `matiere`
 FROM `notes`
 LEFT JOIN `eleves` ON `notes`.id_eleves = `eleves`.id
 LEFT JOIN `matieres` ON `notes`.id_matieres = `matieres`.id;
+
+Fonctionnalité 2:
+SELECT `nom`, `prenom`, `classe`, AVG(`notes`)
+FROM `notes`
+LEFT JOIN `eleves` ON `notes`.id_eleves = `eleves`.id
+LEFT JOIN `classes` ON `eleves`.id = `classes`.id_eleves
+GROUP BY `eleves`.id, `classes`.classe;
